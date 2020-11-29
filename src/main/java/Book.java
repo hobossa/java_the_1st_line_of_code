@@ -51,4 +51,12 @@ public class Book {
             return false;
         }
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Book) {
+            return this.compare((Book)obj);
+        }
+        return false;
+    }
 }

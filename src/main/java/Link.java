@@ -1,5 +1,3 @@
-import java.lang.invoke.VarHandle;
-
 public class Link<E> {
     private static class Node<E> {
         private E data;
@@ -12,25 +10,25 @@ public class Link<E> {
     }
 
     private Node<E> head, tail;
-    private int size;
+    private int count;
 
     public Link() {
         head = tail = new Node<E>(null);
-        size = 0;
+        count = 0;
     }
 
     public void add(E value) {
         tail.next = new Node<E>(value);
         tail = tail.next;
-        size++;
+        count++;
     }
 
     public int size() {
-        return size;
+        return count;
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        return count == 0;
     }
 
     public boolean contains(E value) {
@@ -45,7 +43,7 @@ public class Link<E> {
     }
 
     private Node<E> at(int index) throws Exception {
-        if (index >= size || index < 0) {
+        if (index >= count || index < 0) {
             throw new Exception("out of range");
         }
         int n = index;
@@ -71,7 +69,7 @@ public class Link<E> {
         while (p.next != null) {
             if (p.next.data.equals(value)) {
                 p.next = p.next.next;
-                size--;
+                count--;
             } else {
                 p = p.next;
             }
@@ -85,6 +83,6 @@ public class Link<E> {
     public void clear() {
         head.next = null;
         tail = head;
-        size = 0;
+        count = 0;
     }
 }
