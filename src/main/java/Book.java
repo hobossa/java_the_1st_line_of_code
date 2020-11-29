@@ -35,4 +35,20 @@ public class Book {
             this.price = price;
         }
     }
+
+    public boolean compare(Book book) {
+        if (book == null) {
+            return false;
+        }
+
+        if (this == book) {
+            return true;
+        }
+
+        if (title.equals(book.title) && price == book.price) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
