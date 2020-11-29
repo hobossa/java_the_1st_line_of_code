@@ -1,3 +1,5 @@
+import java.lang.invoke.VarHandle;
+
 public class Link<E> {
     private static class Node<E> {
         private E data;
@@ -42,7 +44,7 @@ public class Link<E> {
         return false;
     }
 
-    public E get(int index) throws Exception {
+    private Node<E> at(int index) throws Exception {
         if (index >= size || index < 0) {
             throw new Exception("out of range");
         }
@@ -51,15 +53,29 @@ public class Link<E> {
         while (index-- > 0) {
             p = p.next;
         }
+        return p;
+    }
+
+    public E get(int index) throws Exception {
+        Node<E> p = at(index);
         return p.data;
     }
 
-    public void set(int index, E value) {
-
+    public void set(int index, E value) throws Exception {
+        Node<E> p = at(index);
+        p.data = value;
     }
 
     public void remove(E value) {
-
+        Node<E> p = head;
+        while (p.next != null) {
+            if (p.next.data.equals(value)) {
+                p.next = p.next.next;
+                size--;
+            } else {
+                p = p.next;
+            }
+        }
     }
 
     public E[] toArray() {
@@ -67,6 +83,8 @@ public class Link<E> {
     }
 
     public void clear() {
-
+        head.next = null;
+        tail = head;
+        size = 0;
     }
 }
