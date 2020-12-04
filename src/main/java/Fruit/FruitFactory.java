@@ -1,3 +1,5 @@
+package Fruit;
+
 public class FruitFactory {
     public static Fruit getInstance(String fruitName) {
         if ("apple".equalsIgnoreCase(fruitName)){

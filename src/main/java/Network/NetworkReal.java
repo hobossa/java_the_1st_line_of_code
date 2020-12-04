@@ -1,3 +1,5 @@
+package Network;
+
 public class NetworkReal implements Network {
     @Override
     public void browse() {

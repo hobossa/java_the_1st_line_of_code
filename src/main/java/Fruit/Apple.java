@@ -1,3 +1,5 @@
+package Fruit;
+
 public class Apple implements Fruit {
     @Override
     public void eat() {

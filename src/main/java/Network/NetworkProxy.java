@@ -1,3 +1,5 @@
+package Network;
+
 public class NetworkProxy implements Network {
     private Network network;
 
