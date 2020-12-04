@@ -1,3 +1,5 @@
+package USB;
+
 public class Flash implements USB {
     @Override
     public void start() {

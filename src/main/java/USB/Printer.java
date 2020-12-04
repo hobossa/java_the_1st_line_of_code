@@ -1,11 +1,13 @@
+package USB;
+
 public class Printer implements USB {
     @Override
     public void start() {
-        System.out.println("Printer start working.");
+        System.out.println("USB.Printer start working.");
     }
 
     @Override
     public void stop() {
-        System.out.println("Printer stop working.");
+        System.out.println("USB.Printer stop working.");
     }
 }
