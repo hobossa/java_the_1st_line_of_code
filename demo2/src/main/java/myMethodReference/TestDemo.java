@@ -2,22 +2,22 @@ package myMethodReference;
 
 @FunctionalInterface
 interface IMessage1<P, R> {
-    public R fun(P p);
+    R fun(P p);
 }
 
 @FunctionalInterface
 interface IMessage2<R> {
-    public R fun();
+    R fun();
 }
 
 @FunctionalInterface
 interface IMessage3<P> {
-    public int fun(P p1, P p2);
+    int fun(P p1, P p2);
 }
 
 @FunctionalInterface
 interface IMessage4<C> {
-    public C fun(String t, double p);
+    C fun(String t, double p);
 }
 
 class Book {
