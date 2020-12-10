@@ -12,8 +12,11 @@ public class SellTicketsCallable implements Callable<String> {
     @Override
     public String call() throws Exception {
         for (int i = 0; i < 100; i++) {
-            if (ticketCount > 0) {
-                System.out.println(Thread.currentThread() + " Sold a ticket, " + (--ticketCount) +" tickets left.");
+            synchronized (this) {
+                if (ticketCount > 0) {
+                    Thread.sleep(100);
+                    System.out.println(Thread.currentThread() + " Sold a ticket, " + (--ticketCount) +" tickets left.");
+                }
             }
         }
         return "All tickets are sold out.";
