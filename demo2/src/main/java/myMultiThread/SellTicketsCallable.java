@@ -13,7 +13,7 @@ public class SellTicketsCallable implements Callable<String> {
     public String call() throws Exception {
         for (int i = 0; i < 100; i++) {
             if (ticketCount > 0) {
-                System.out.println(Thread.currentThread() + " Sold a ticket, " + ticketCount-- +" tickets left.");
+                System.out.println(Thread.currentThread() + " Sold a ticket, " + (--ticketCount) +" tickets left.");
             }
         }
         return "All tickets are sold out.";

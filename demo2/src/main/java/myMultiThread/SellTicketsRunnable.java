@@ -11,7 +11,7 @@ public class SellTicketsRunnable implements Runnable {
     public void run() {
         for (int i = 0; i < 100; i++) {
             if (ticketCount > 0) {
-                System.out.println(Thread.currentThread() + "Sold a ticket, " + ticketCount-- +" tickets left.");
+                System.out.println(Thread.currentThread() + "Sold a ticket, " + (--ticketCount) +" tickets left.");
             }
         }
     }
