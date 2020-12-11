@@ -1,4 +1,4 @@
-package myLambda;
+package TryLambda;
 
 // 关于 @FunctionalInterface 注释的使用
 // 在 Lambda 表达式中已经明确要求是在接口上进行的一种操作，并且接口中只允许定义一个抽象方法。
@@ -7,8 +7,6 @@ package myLambda;
 // 方法。
 // 从理论上来讲，如果一个接口只有一个抽象方法，写不写这个注解是没有区别的，但还是建议写上。
 // 同时需要注意的是，在函数式接口中依然可以定义普通方法与静态方法。
-
-import myEnum.IMessage;
 
 @FunctionalInterface
 interface IMessage3 {

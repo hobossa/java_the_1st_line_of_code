@@ -1,8 +1,6 @@
-package myEnum;
+package TryEnum;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class Color2Test {
     @Test

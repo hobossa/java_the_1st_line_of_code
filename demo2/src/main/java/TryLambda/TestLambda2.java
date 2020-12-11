@@ -1,4 +1,4 @@
-package myLambda;
+package TryLambda;
 
 @FunctionalInterface
 interface IMessage2 {

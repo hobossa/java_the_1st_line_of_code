@@ -1,4 +1,4 @@
-package myMultiThread;
+package TryMultiThread;
 
 public class SellTicketsRunnable implements Runnable {
     private int ticketCount;

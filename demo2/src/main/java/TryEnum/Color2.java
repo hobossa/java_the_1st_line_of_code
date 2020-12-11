@@ -1,4 +1,4 @@
-package myEnum;
+package TryEnum;
 
 public enum Color2 {
     RED("color2 : red"), GREEN("color2 : green"), BLUE("color2 : blue");

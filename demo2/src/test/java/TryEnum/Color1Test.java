@@ -1,4 +1,4 @@
-package myEnum;
+package TryEnum;
 
 import org.junit.Test;
 

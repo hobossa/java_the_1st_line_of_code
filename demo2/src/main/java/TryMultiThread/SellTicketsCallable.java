@@ -1,4 +1,4 @@
-package myMultiThread;
+package TryMultiThread;
 
 import java.util.concurrent.Callable;
 

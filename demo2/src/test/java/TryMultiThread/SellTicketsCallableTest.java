@@ -1,12 +1,9 @@
-package myMultiThread;
+package TryMultiThread;
 
 import org.junit.Test;
 
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
-
-import static org.junit.Assert.*;
 
 public class SellTicketsCallableTest {
     @Test

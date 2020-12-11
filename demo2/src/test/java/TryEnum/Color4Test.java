@@ -1,13 +1,11 @@
-package myEnum;
+package TryEnum;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class Color3Test {
+public class Color4Test {
     @Test
     public void test() {
-        for (Color3 c : Color3.values()) {
+        for (Color4 c : Color4.values()) {
             System.out.println(c.ordinal() + " - " + c.getTitle());
         }
     }

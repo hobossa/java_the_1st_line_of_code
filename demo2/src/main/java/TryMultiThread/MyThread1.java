@@ -1,4 +1,4 @@
-package myMultiThread;
+package TryMultiThread;
 
 public class MyThread1 extends Thread {
     private String name;

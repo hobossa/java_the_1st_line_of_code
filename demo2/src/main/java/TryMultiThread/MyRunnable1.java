@@ -1,4 +1,4 @@
-package myMultiThread;
+package TryMultiThread;
 
 public class MyRunnable1 implements Runnable {
     private String name;

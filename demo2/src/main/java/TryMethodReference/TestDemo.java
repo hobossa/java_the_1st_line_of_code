@@ -1,4 +1,4 @@
-package myMethodReference;
+package TryMethodReference;
 
 @FunctionalInterface
 interface IMessage1<P, R> {

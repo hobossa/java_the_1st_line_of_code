@@ -1,4 +1,4 @@
-package myEnum;
+package TryEnum;
 
 public enum Color4 implements IMessage{
     RED("red") {
