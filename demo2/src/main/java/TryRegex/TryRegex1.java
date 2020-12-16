@@ -3,7 +3,10 @@ package TryRegex;
 import javax.swing.text.Style;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TryRegex1 {
     public static void main(String[] args) {
@@ -61,5 +64,20 @@ public class TryRegex1 {
         String strEmail = "test_te@gmail.com";
         String regexEmail = "\\w+@\\w+\\.\\w+";
         System.out.println(strEmail.matches(regexEmail));
+
+
+        // using Pattern
+        String str7 = "hello123world123";
+        String regex7 = "\\d+";
+        Pattern pattern7 = Pattern.compile(regex7);
+        String[] result7 = pattern7.split(str7);
+        System.out.println(Arrays.toString(result7));
+
+        // Using Pattern and Matcher
+        String str8 = "100";
+        String regex8 = "\\d+";
+        Pattern pattern8 = Pattern.compile(regex8);
+        Matcher mat8 = pattern8.matcher(str8);
+        System.out.println(mat8.matches());
     }
 }
