@@ -8,7 +8,7 @@ public class TestDemo {
         Locale loc = Locale.getDefault();
         System.out.println(loc);
         Locale enUS = new Locale("en", "US");
-        ResourceBundle rb = ResourceBundle.getBundle("TryResourceBundle.Messages", enUS);
+        ResourceBundle rb = ResourceBundle.getBundle("Messages", enUS);
         System.out.println(rb.getString("hello"));
     }
 }
