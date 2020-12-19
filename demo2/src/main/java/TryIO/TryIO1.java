@@ -9,7 +9,10 @@ public class TryIO1 {
         String current = new File(".").getCanonicalPath();
         System.out.println(current);
 
-        File file = new File("/Users/");
+        String strSrc = current + File.separator + "src"
+                + File.separator + "main" + File.separator + "java";
+
+        File file = new File(strSrc);
         if (file.isDirectory()) {
             File[] results = file.listFiles();
             for (File f :
@@ -18,7 +21,7 @@ public class TryIO1 {
             }
         }
         System.out.println(file.getPath());
-        if (file.exists()){
+        if (file.exists()) {
             file.delete();
         } else {
             System.out.println("create a new file.");
