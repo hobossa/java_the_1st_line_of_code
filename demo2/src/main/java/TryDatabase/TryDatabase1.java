@@ -33,6 +33,8 @@ public class TryDatabase1 {
             PreparedStatement pstmt = conn.prepareStatement(sqlInsertEx);
             pstmt.setString(1, "Junior Jackson");
             pstmt.setString(2, "2020-10-10");
+            // pstmt.setDate(2, java.sql.Date.valueOf("2013-09-04"));
+            // pstmt.setTimestamp(2, java.sql.Timestamp.valueOf("2011-11-11 00:00:00"));
             pstmt.setInt(3, 20);
             pstmt.setString(4, "I am young.");
             pstmt.executeUpdate();
