@@ -9,7 +9,7 @@ public class Emp implements Serializable {
     private String job;
     private Date hiredate;  // hire date
     private Double sal;     // salary
-    private Double comm;    // comment
+    private Double comm;    // comm
 
     public Integer getEmpno() {
         return empno;

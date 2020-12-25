@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class SqliteConnection implements DatabaseConnection {
+public class SqliteConnection implements IDatabaseConnection {
     private static final String DB_URL = "jdbc:sqlite:tryDao.db";
     private Connection connection = null;
 

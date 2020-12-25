@@ -3,10 +3,10 @@ package TryDaoModel;
 import java.lang.reflect.InvocationTargetException;
 
 public class DatabaseConnectionFactory {
-    public static DatabaseConnection getInstance(String className) {
-        DatabaseConnection conn = null;
+    public static IDatabaseConnection getInstance(String className) {
+        IDatabaseConnection conn = null;
         try {
-            conn = (DatabaseConnection) Class.forName(className).getDeclaredConstructor().newInstance();
+            conn = (IDatabaseConnection) Class.forName(className).getDeclaredConstructor().newInstance();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

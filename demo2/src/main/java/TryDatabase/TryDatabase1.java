@@ -38,6 +38,7 @@ public class TryDatabase1 {
             pstmt.setInt(3, 20);
             pstmt.setString(4, "I am young.");
             pstmt.executeUpdate();
+            // transaction
             // Statement.addBatch Statement.executeBatch
             // PreparedStatement.addBatch
             // Connection.commit() Connection.rollback()
