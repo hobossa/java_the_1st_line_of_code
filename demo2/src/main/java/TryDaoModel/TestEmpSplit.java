@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TestEmpSplit {
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) throws Exception {
         Map<String, Object> map = ServiceFactory.getIEmpServiceInstance()
                 .list(1, 5, "ename", "");
