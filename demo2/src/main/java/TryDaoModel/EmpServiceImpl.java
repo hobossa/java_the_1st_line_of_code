@@ -76,7 +76,7 @@ public class EmpServiceImpl implements IEmpService {
     public Map<String, Object> list(int currentPage, int lineSize, String column, String keyWord) throws Exception {
         try {
             Map<String, Object> map = new HashMap<>();
-            map.put("allEMps", DAOFactory.getIEmpDAOInstance(this.dbc.getConnection())
+            map.put("allEmps", DAOFactory.getIEmpDAOInstance(this.dbc.getConnection())
                     .findAllSplit(currentPage, lineSize, column, keyWord));
             map.put("empCount", DAOFactory.getIEmpDAOInstance(this.dbc.getConnection())
                     .getAllCount(column, keyWord));

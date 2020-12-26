@@ -4,21 +4,38 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class EmpDAOImpl implements IEmpDAO {
+public class EmpDAOSqliteImpl implements IEmpDAO {
     private final Connection connection;
     private PreparedStatement preparedStatement;
 
-    public EmpDAOImpl(Connection connection) {
+    public EmpDAOSqliteImpl(Connection connection) {
         this.connection = connection;
+        try {
+            this.createTable();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createTable() throws Exception {
+        String sql = "CREATE TABLE IF NOT EXISTS emp (\n" +
+                "    empno INTEGER PRIMARY KEY,\n" +
+                "    ename TEXT,\n" +
+                "    job TEXT,\n" +
+                "    hiredate NUMERIC,\n" +
+                "    sal REAL,\n" +
+                "    comm REAL" +
+                ");";
+        this.preparedStatement = this.connection.prepareStatement(sql);
+        this.preparedStatement.execute();
     }
 
     @Override
     public boolean doCreate(Emp vo) throws Exception {
-        String sql = "INSERT INTO emp(empno, ename, job, hiredate, sal, comm) VALUES (?,?,?,?,?);";
+        String sql = "INSERT INTO emp(empno, ename, job, hiredate, sal, comm) VALUES (?,?,?,?,?,?);";
         this.preparedStatement = this.connection.prepareStatement(sql);
         this.preparedStatement.setInt(1, vo.getEmpno());
         this.preparedStatement.setString(2, vo.getEname());
@@ -100,14 +117,13 @@ public class EmpDAOImpl implements IEmpDAO {
     @Override
     public List<Emp> findAllSplit(Integer currentPage, Integer lineSize, String column, String keyWord) throws Exception {
         List<Emp> all = new ArrayList<>();
-        String sql = "SELECT * FROM " +
-                "(SELECT empno, ename, job, hiredate, sal, comm, ROWNUM rn " +
-                "FROM emp WHERE " + column + " LIKE ? AND ROWNUM<=?) temp " +
-                "WHERE temp.rn > ?;";
+        //String sql = "SELECT empno, ename, job, hiredate, sal, comm " +
+        //        "FROM emp WHERE " + column + " LIKE ? LIMIT ?, ?;";
+        String sql = "SELECT empno, ename, job, hiredate, sal, comm FROM emp WHERE ename LIKE ? LIMIT ?, ?;";
         this.preparedStatement = this.connection.prepareStatement(sql);
         this.preparedStatement.setString(1, "%" + keyWord + "%");
         this.preparedStatement.setInt(2, currentPage * lineSize);
-        this.preparedStatement.setInt(3, (currentPage - 1) * lineSize);
+        this.preparedStatement.setInt(3, lineSize);
         ResultSet rs = this.preparedStatement.executeQuery();
         while (rs.next()) {
             Emp vo = new Emp();
